@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector(".contact-form");
 
     form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
-        clearErrors(); // Clear previous error messages
+        event.preventDefault(); 
+        clearErrors(); 
 
         let isValid = true;
 
-        // Get form field values
+       
         const fullName = document.querySelector("input[placeholder='Full Name']");
         const email = document.querySelector("input[placeholder='Email Address']");
         const phone = document.querySelector("input[placeholder='Phone Number']");
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const fileInput = document.querySelector("input[type='file']");
         const termsCheckbox = document.querySelector("#terms");
 
-        // Validation functions
+      
         function showError(input, message) {
             const error = document.createElement("small");
             error.classList.add("text-danger");
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return /^[0-9]{10}$/.test(phone);
         }
 
-        // Field Validations
+        
         if (!fullName.value.trim()) {
             showError(fullName, "Full Name is required.");
             isValid = false;
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        // If form is valid, simulate submission
+       
         if (isValid) {
             simulateFormSubmission();
         }
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then((message) => {
             alert(message);
-            document.querySelector(".contact-form").reset(); // Reset form after submission
+            document.querySelector(".contact-form").reset(); 
         })
         .finally(() => {
             submitButton.textContent = "Submit Information";
